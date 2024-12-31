@@ -1,0 +1,53 @@
+/* App.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
+
+.map-container {
+  flex: 1;
+  width: 100%;
+}
+
+.legend {
+  background: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.legend h3 {
+  margin: 0 0 10px 0;
+}
+
+.legend ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.legend-color {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+}
+
+.link {
+  color: #2b2b2b;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #ff033e;
+}
