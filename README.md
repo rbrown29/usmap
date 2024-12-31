@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# US Interactive Map with State Links
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project displays an interactive map of the United States using Mapbox GL JS. Users can click on individual states to open a link associated with the state.
 
-## Available Scripts
+## Add on Pages Oregon Hiking project
+- **Oregon Hiking**: https://github.com/rbrown29/Oregon-Hikes
+- **Hike Explorer**: https://github.com/rbrown29/HikeExplorer
+- **HikingStateView**:https://github.com/rbrown29/hiking-state-view
 
-In the project directory, you can run:
+## Demo
+[US Interactive Map](https://usmaptrails.netlify.app/)
 
-### `npm start`
+## Features
+- Interactive map with clickable states.
+- State-specific links managed via the `stateLinks.js` file.
+- Responsive design with a legend and easy navigation.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
+- React.js
+- Mapbox GL JS
+- GeoJSON for state boundaries
+- CSS for responsive styling
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
+- Node.js and npm installed on your machine.
+- A Mapbox account with an access token.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
+1. Clone the repository:
+   
 
-### `npm run build`
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Set your Mapbox access token in the code:
+    - make a file and name it  `.env` in the root directory of the project.
+   ```javascript
+   REACT_APP_MAPBOX_TOKEN = 'YOUR_MAPBOX_ACCESS_TOKEN';
+   REACT_APP_MAPBOX_STYLE= 'your-mapbox-style';
+   REACT_APP_GEOJSON_URL= 'https://raw.githubusercontent.com/PublicaMundi/MappingAPI/master/data/geojson/us-states.json';
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Start the development server:
+   ```bash
+   npm start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   The application will run at `http://localhost:3000`.
 
-### `npm run eject`
+### Adding State Links
+- Open the `stateLinks.js` file.
+- Add an entry for each state in the following format:
+  ```javascript
+  { name: "State Name", url: "https://example.com/state-name" },
+  ```
+- Save the file. The links will automatically update in the application.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## File Structure
+```
+interactive-us-map/
+├── public/
+├── src/
+│   ├── App.js          # Main React component
+│   ├── stateLinks.js   # File containing state links
+│   ├── App.css         # Styling for the application
+│   ├── index.js        # Entry point for the React app
+├── package.json
+├── README.md           # Project documentation
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Screenshots
+![US Interactive Map](/public/usmap.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Acknowledgments
+- [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/) for the interactive map library.
+- [PublicaMundi](https://github.com/PublicaMundi/MappingAPI) for the US states GeoJSON data.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project was created with [Create React App](https://github.com/facebook/create-react-app).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
